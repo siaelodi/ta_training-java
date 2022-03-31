@@ -9,15 +9,34 @@ import java.util.Scanner;
 public class SumNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите целые числа: ");
+        System.out.println("Type an integer number: ");
         System.out.print("A: ");
-        int a = scanner.nextInt();
+        int a = 0;
+        boolean aExists = false;
+        if (scanner.hasNextInt()) {
+            a = scanner.nextInt();
+            aExists = true;
+        }else{
+            System.out.println("Wrong number!");
+        }
         System.out.print("B: ");
-        int b = scanner.nextInt();
-        int sum = sumNumbers(a,b);
-        int multiply = multiplyNumbers(a,b);
-        System.out.println("Сумма чисел " + a + " и " + b + " равна " + sum);
-        System.out.println("Произведение чисел " + a + " и " + b + " равно " + multiply);
+        int b = 0;
+        boolean bExists = false;
+        if (scanner.hasNextInt()) {
+            b = scanner.nextInt();
+            bExists = true;
+        }else{
+            System.out.println("Wrong number!");
+        }
+
+        if (aExists && bExists) {
+            int sum = sumNumbers(a, b);
+            int multiply = multiplyNumbers(a, b);
+            System.out.println("Sum of numbers " + a + " and " + b + " is " + sum);
+            System.out.println("Product of numbers " + a + " and " + b + " is " + multiply);
+        }else{
+            System.out.println("Sum and product of numbers cannot be counted!");
+        }
     }
 
     static int sumNumbers (int a, int b){

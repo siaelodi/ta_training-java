@@ -43,7 +43,7 @@ public class DisplayMonth {
             case 12:
                 System.out.println("December");
             default:
-                System.out.println("A month is not determined.");
+                System.out.println("A month cannot be determined.");
         }
     }
 }

@@ -8,18 +8,31 @@ import java.util.Scanner;
  */
 public class DisplayNumbers {
     public static void main(String[] args) {
-        System.out.println("Введите количество чисел для вывода:");
         Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
+
+        int number = 0;
+
+        System.out.println("Type an amount of numbers:");
+
+        if (scanner.hasNextInt()){
+            number = scanner.nextInt();
+            print(number);
+        }else{
+            System.out.println("Wrong number!");
+        }
+
+    }
+
+    static void print(int number){
         Random x = new Random();
 
-        System.out.println("Выведем числа с переходом на новую строку:");
+        System.out.println("Let's print the numbers with a new line:");
         for (int i = 0; i<number; i++){
             int a = x.ints(1,100).findFirst().getAsInt();
             System.out.println(a);
         }
 
-        System.out.println("Выведем числа без перехода на новую строку:");
+        System.out.println("Let's print the numbers without a new line :");
         for (int i = 0; i<number; i++){
             int a = x.ints(1,100).findFirst().getAsInt();
             System.out.print(a + " ");
