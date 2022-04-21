@@ -1,2 +1,2 @@
 # ta_training-java
-testing automation training
+Automated Testing Foundations with Java
